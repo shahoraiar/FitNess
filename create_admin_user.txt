@@ -1,0 +1,10 @@
+python manage.py createsuperuser
+python manage.py shell
+
+from app.user.models import User  # update to your path
+user = User.objects.get(email="your-admin-email@example.com")
+user.user_type = "admin"
+user.save()
+
+exit()
+
